@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="struts2Label:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/struts2Label_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="struts2Label/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="struts2Label" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
