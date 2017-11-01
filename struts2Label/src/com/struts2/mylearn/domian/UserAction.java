@@ -5,6 +5,15 @@ public class UserAction {
     private  String userName ;
     private  String desc ;
     private  String password ;
+    private  boolean married;
+
+    public boolean isMarried() {
+        return married;
+    }
+
+    public void setMarried(boolean married) {
+        this.married = married;
+    }
 
     public String getUserId() {
         return userId;
@@ -49,6 +58,7 @@ public class UserAction {
                 ", userName='" + userName + '\'' +
                 ", desc='" + desc + '\'' +
                 ", password='" + password + '\'' +
+                ", married=" + married +
                 '}';
     }
 }

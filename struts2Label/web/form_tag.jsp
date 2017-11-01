@@ -20,6 +20,7 @@
         <s:textfield name="userName" label="UserName"></s:textfield>
         <s:password name="password" label="PassWord"></s:password>
         <s:textarea name="desc"  label="Desc"></s:textarea>
+        <s:checkbox name="married" label="Married"></s:checkbox>
         <s:submit></s:submit>
     </s:form>
 </body>
