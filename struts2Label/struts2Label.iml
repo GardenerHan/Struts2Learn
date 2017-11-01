@@ -19,6 +19,15 @@
           <option name="mySuppressPropertiesValidation" value="false" />
         </configuration>
       </facet>
+      <facet type="Struts2" name="Struts 2">
+        <configuration>
+          <fileset id="s2fileset" name="My Fileset " removed="false">
+            <file>file://$MODULE_DIR$/src/struts.xml</file>
+            <file>jar://D:/struts2/struts2.5.13min/struts2-core-2.5.13.jar!/struts-default.xml</file>
+          </fileset>
+          <propertiesKeys disabled="false" />
+        </configuration>
+      </facet>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -28,6 +37,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="struts" level="project" />
+    <orderEntry type="library" exported="" name="struts" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.5.9" level="application_server_libraries" />
   </component>
 </module>
