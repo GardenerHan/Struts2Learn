@@ -1,11 +1,40 @@
 package com.struts2.mylearn.domian;
 
+import java.util.Arrays;
+
 public class UserAction {
     private String userId ;
     private  String userName ;
     private  String desc ;
     private  String password ;
     private  boolean married;
+    private  String gender ;
+    private  String[] cities;
+    private  String age ;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String[] getCities() {
+        return cities;
+    }
+
+    public void setCities(String[] cities) {
+        this.cities = cities;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
 
     public boolean isMarried() {
         return married;
@@ -51,6 +80,9 @@ public class UserAction {
         return "input" ;
     }
 
+    public UserAction() {
+    }
+
     @Override
     public String toString() {
         return "UserAction{" +
@@ -59,6 +91,9 @@ public class UserAction {
                 ", desc='" + desc + '\'' +
                 ", password='" + password + '\'' +
                 ", married=" + married +
+                ", gender='" + gender + '\'' +
+                ", cities=" + Arrays.toString(cities) +
+                ", age='" + age + '\'' +
                 '}';
     }
 }
