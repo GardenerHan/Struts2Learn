@@ -12,5 +12,6 @@
 </head>
 <body>
     <a href="person_dosit.action"> go to inde.jsp</a>
+    <a href="emp-input">go to emp-input</a>
 </body>
 </html>

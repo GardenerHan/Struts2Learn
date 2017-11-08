@@ -5,7 +5,12 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+    <!--当前主题-->
+    <!--<constant name="struts.ui.theme" value="simple"></constant>-->
     <package name="learn1" extends="struts-default">
+        <action name="emp-*" class="com.struts2.app.main.Employee" method="{1}">
+            <result name="{1}">/emp-{1}.jsp</result>
+        </action>
         <action name="save" class="com.struts2.mylearn.domian.UserAction" method="save">
             <result name="input">/form_tag.jsp</result>
         </action>
