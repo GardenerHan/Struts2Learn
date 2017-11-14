@@ -2,11 +2,12 @@ package com.hgx.struts2.app;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
 import org.apache.struts2.interceptor.RequestAware;
 
 import java.util.Map;
 
-public class EmployeeAction implements RequestAware,ModelDriven<Employeee> {
+public class EmployeeAction implements RequestAware,ModelDriven<Employeee>,Preparable{
     private Map<String,Object> requestMap  ;
    // Dao dao = new Dao() ;
     //需要在当前的employeeAction 中定义 employeeId 属性 从而接受请求参数
@@ -23,6 +24,9 @@ public class EmployeeAction implements RequestAware,ModelDriven<Employeee> {
         Dao.update(employeee);
         return "success" ;
     }
+    public void prepareUpdate(){
+        employeee = new Employeee() ;
+    }
     public String delete(){
         Dao.delete(employeeId);
         //结果的类型应该是重定向 redirectAction
@@ -33,6 +37,9 @@ public class EmployeeAction implements RequestAware,ModelDriven<Employeee> {
         Dao.save(employeee);
         return "success" ;
     }
+    public void prepareSave(){
+        employeee = new Employeee() ;
+    }
     public String edit(){
 //        Employeee emppp = Dao.get(employeee.getEmployeeId()) ;
 //        employeee.setFirstName(emppp.getFirstName());
@@ -42,6 +49,9 @@ public class EmployeeAction implements RequestAware,ModelDriven<Employeee> {
         //手动将数据的数据加入到值栈
 //        ActionContext.getContext().getValueStack().push(Dao.get(employeee.getEmployeeId()));
         return "edit" ;
+    }
+    public void prepareEdit(){
+        employeee = Dao.get(employeeId) ;
     }
     @Override
     public void setRequest(Map<String, Object> map) {
@@ -64,18 +74,33 @@ public class EmployeeAction implements RequestAware,ModelDriven<Employeee> {
         //若为create 则 new
         //若为Edit 则 数据库的数据赋值
         //则需要在modelDriven拦截器栈param
-        if (employeeId == null)
-            employeee = new Employeee() ;
-        else
-            employeee = Dao.get(employeeId) ;
+//        if (employeeId == null)
+//            employeee = new Employeee() ;
+//        else
+//            employeee = Dao.get(employeeId) ;
         return employeee ;
     }
 
-//    public String getFirstName() {
-//        return firstName;
+
+    /**
+     * prepare 方法的作用: 为getModel()方法准备model的
+     * @throws Exception
+     */
+    @Override
+    public void prepare() throws Exception {
+//        if (employeeId == null)
+//            employeee = new Employeee() ;
+//        else
+//            employeee = Dao.get(employeeId) ;
 //    }
 //
+//    public String getFirstName() {
+//        return firstName;
+        System.out.println("prepare....");
+    }
+
 //    public void setFirstName(String firstName) {
+
 //        this.firstName = firstName;
 //    }
 //

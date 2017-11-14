@@ -7,8 +7,16 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <package name="default" extends="struts-default">
+        <interceptors>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="paramsPrepareParamsStack">
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
         <!--配置默认拦截栈-->
-        <default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+        <default-interceptor-ref name="myStack"></default-interceptor-ref>
+        <!--<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>-->
         <action name="emp-*" class="com.hgx.struts2.app.EmployeeAction"  method="{1}">
             <result name="success" type="redirectAction">emp-list</result>
             <result name="{1}">/emp-{1}.jsp</result>
