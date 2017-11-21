@@ -16,9 +16,12 @@
     <br><br>
     <s:form action="testValidation">
         <s:textfield name="age" label="age"></s:textfield>
+        <s:password name="password" label="password"></s:password>
+        <s:password name="password2" label="password2"></s:password>
         <s:submit value="提交"></s:submit>
     </s:form>
     <s:fielderror></s:fielderror>
+    <s:actionerror></s:actionerror>
     <%-- map-->数组--%>
     ${fieldErrors.age[0]}
 </body>
