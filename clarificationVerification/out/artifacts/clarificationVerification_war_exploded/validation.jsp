@@ -18,5 +18,8 @@
         <s:textfield name="age" label="age"></s:textfield>
         <s:submit value="提交"></s:submit>
     </s:form>
+    <s:fielderror></s:fielderror>
+    <%-- map-->数组--%>
+    ${fieldErrors.age[0]}
 </body>
 </html>

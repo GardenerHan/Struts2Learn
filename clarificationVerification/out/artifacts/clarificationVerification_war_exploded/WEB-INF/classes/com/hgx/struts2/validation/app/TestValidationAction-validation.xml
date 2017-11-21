@@ -10,7 +10,7 @@
         <field-validator type="int">
             <param name="min">20</param>
             <param name="max">50</param>
-            <message>Age needs to be between ${min} and ${max}</message>
+            <message key="error.int"></message>
         </field-validator>
     </field>
 </validators>
