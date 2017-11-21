@@ -13,6 +13,13 @@
 </head>
 <body>
     <s:debug></s:debug>
+    <br><br>
+    <%--注意下划线:--%>
+    <a href="testI18n.action?request_locale=en_US">English</a>
+    <a href="testI18n.action?request_locale=zh_CN">中文</a>
+    <br><br>
+    <a href="index.jsp"> index page</a>
+    <br><br>
     <s:text name="time">
      <s:param value="date"></s:param>
     </s:text>

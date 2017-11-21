@@ -1,0 +1,1 @@
+package com.hgx.struts2.i18n.app;
