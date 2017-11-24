@@ -18,6 +18,7 @@
         <s:textfield name="age" label="age"></s:textfield>
         <s:password name="password" label="password"></s:password>
         <s:password name="password2" label="password2"></s:password>
+        <s:textfield name="count" label="count"></s:textfield>
         <s:submit value="提交"></s:submit>
     </s:form>
     <s:fielderror></s:fielderror>
