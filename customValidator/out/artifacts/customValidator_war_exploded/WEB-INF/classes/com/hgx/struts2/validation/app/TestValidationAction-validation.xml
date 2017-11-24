@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+    <!--基于字段的验证-->
+    <field name="idCard">
+        <field-validator type="idcard">
+            <message> It is not IDCard</message>
+        </field-validator>
+    </field>
+    <field name="age">
+        <!-- short-circuit="true" 设置短路验证 如果当前验证没有通过，不进行下一个验证-->
+        <!--如果类型转换失败，要不进行这些错误显示，修改类型拦截器源码-->
+        <field-validator type="conversion" short-circuit="true">
+            <message>Conversion Error Occurred</message>
+        </field-validator>
+        <field-validator type="int">
+            <param name="min">20</param>
+            <param name="max">50</param>
+            <message key="error.int"></message>
+        </field-validator>
+    </field>
+    <field name="count">
+        <field-validator type="int">
+            <param name="min">1</param>
+            <param name="max">10</param>
+            <message key="error.int"></message>
+        </field-validator>
+    </field>
+
+    <!--测试非字段验证-->
+    <validator type="expression">
+        <param name="expression">![CDATA[password=password]]</param>
+        <message>password is not equals to password2 </message>
+    </validator>
+</validators>
