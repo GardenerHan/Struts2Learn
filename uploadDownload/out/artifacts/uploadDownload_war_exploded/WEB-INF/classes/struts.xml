@@ -7,6 +7,21 @@
 <struts>
     <constant name="struts.custom.i18n.resources" value="i18n"></constant>
     <package name="default" namespace="/" extends="struts-default">
+            <interceptors>
+                <interceptor-stack name="hgxstack">
+                    <interceptor-ref name="defaultStack">
+
+                        <!--default.properties-->
+                        <!--大小:2000字节-->
+                        <param name="fileUpload.maximumSize">2000</param>
+                        <!--允许的类型-->
+                        <param name="fileUpload.allowedTypes">text/html,text/xml</param>
+                        <!--文件的扩展名-->
+                        <param name="fileUpload.allowedExtensions">html,dtd,xml</param>
+                    </interceptor-ref>
+                </interceptor-stack>
+            </interceptors>
+        <default-interceptor-ref name="hgxstack"></default-interceptor-ref>
         <action name="testUpload" class="com.hgx.struts2.upload.UploadAction">
             <result>/success.jsp</result>
             <result name="input">/index.jsp</result>
