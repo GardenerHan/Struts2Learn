@@ -8,7 +8,6 @@
     <package name="default" extends="struts-default" namespace="/">
 
         <action name="testToken" class="com.hgx.struts2.token.TokenAction">
-            <!--tokensession也ok-->
             <interceptor-ref name="token"></interceptor-ref>
             <interceptor-ref name="defaultStack"></interceptor-ref>
             <result name="invalid.token">/token-error.jsp</result>
