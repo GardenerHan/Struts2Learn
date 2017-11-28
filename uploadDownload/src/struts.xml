@@ -25,6 +25,13 @@
         <action name="testUpload" class="com.hgx.struts2.upload.UploadAction">
             <result>/success.jsp</result>
             <result name="input">/index.jsp</result>
+
+        </action>
+        <action name="testDownload" class="com.hgx.struts2.download.DownloadAction">
+            <result name="success" type="stream">
+                <param name="bufferSize">2048</param>
+                <param name="contentDisposition">attachment;filename=hidden.html</param>
+            </result>
         </action>
     </package>
 </struts>
